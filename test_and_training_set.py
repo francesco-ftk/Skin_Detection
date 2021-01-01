@@ -89,20 +89,20 @@ def create_training_and_test_set(totalFrame):
         for j in range(col):
             for k in range(row):
                 p=pix[j,k]
-                p[0]=p[0]/255
-                p[1]=p[1]/255
-                p[2]=p[2]/255
+                R=p[0]/255
+                G=p[1]/255
+                B=p[2]/255
                 # Luminanza
-                Y= 0.2126*p[0]+0.7152*p[1]+0.0722*p[2]
+                Y= 0.2126*R+0.7152*G+0.0722*B
                 # Satuazione
-                S=max(p[0],p[1],p[2])-min(p[0],p[1],p[2])
+                S=max(R,G,B)-min(R,G,B)
                 # Tonalità
-                if(p[0]==p[1]==p[2]):
+                if(R==G==B):
                     H1=90
                 else:
-                    H1=np.arccos((p[0]-0.5*p[1]-0.5*p[2])/(float)((p[0]**2+p[1]**2+p[2]**2-p[0]*p[1]-p[0]*p[2]-p[2]*p[1])**0.5))
+                    H1=np.arccos((R-0.5*G-0.5*B)/(float)((R**2+G**2+B**2-R*G-R*B-B*G)**0.5))
                     H1=math.degrees(H1)
-                if p[2]>p[1]:
+                if B>G:
                     H=360-H1
                 else:
                     H=H1
@@ -117,7 +117,10 @@ def create_training_and_test_set(totalFrame):
         for j in range(col):
             for k in range(row):
                 p=pix[j,k]
-                if p[0]>248 and p[1]>248 and p[2]>248: # se bianco
+                R=p[0]/255
+                G=p[1]/255
+                B=p[2]/255
+                if R>0.9 and G>0.9 and B>0.9: # se bianco
                     y.append(1) # Skin
                 else:
                     y.append(0) # Background
