@@ -89,9 +89,9 @@ def create_training_and_test_set(totalFrame):
         for j in range(col):
             for k in range(row):
                 p=pix[j,k]
-                R=p[0]/255
-                G=p[1]/255
-                B=p[2]/255
+                R=p[0]
+                G=p[1]
+                B=p[2]
                 # Luminanza
                 Y= 0.2126*R+0.7152*G+0.0722*B
                 # Satuazione
@@ -100,7 +100,7 @@ def create_training_and_test_set(totalFrame):
                 if(R==G==B):
                     H1=90
                 else:
-                    H1=np.arccos((R-0.5*G-0.5*B)/(float)((R**2+G**2+B**2-R*G-R*B-B*G)**0.5))
+                    H1=np.arccos((R-0.5*G-0.5*B)/((R**2+G**2+B**2-R*G-R*B-B*G)**0.5))
                     H1=math.degrees(H1)
                 if B>G:
                     H=360-H1
@@ -117,10 +117,10 @@ def create_training_and_test_set(totalFrame):
         for j in range(col):
             for k in range(row):
                 p=pix[j,k]
-                R=p[0]/255
-                G=p[1]/255
-                B=p[2]/255
-                if R>0.9 and G>0.9 and B>0.9: # se bianco
+                R=p[0]
+                G=p[1]
+                B=p[2]
+                if R>248 and G>248 and B>248: # se bianco
                     y.append(1) # Skin
                 else:
                     y.append(0) # Background

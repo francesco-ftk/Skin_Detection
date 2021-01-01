@@ -9,3 +9,6 @@ def printConfusionMatrix(tn, fp, fn, tp):
     table= go.Figure(data=[go.Table(header=dict(values=['Prediction/True_Class','Skin','Background'],align=['center'],font=dict(size=13)),
     cells=dict(values=[['Skin','Background'],[tp,fn],[fp,tn]],align='center',font_size=13))])
     table.show()
+
+
+
