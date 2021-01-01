@@ -22,17 +22,16 @@ clf=RandomForestClassifier(n_estimators=10, criterion='gini', max_features='auto
 clf.fit(Xtraining,ytraining)
 print("Classificatore Random Forest addestrato")
 prediction=clf.predict(Xtest)
+
 print("Random_Forest Contingency Matrix")
 tn, fp, fn, tp = confusion_matrix(ytrue, prediction).ravel()
 printConfusionMatrix(tn, fp, fn, tp)
-
 p=tp/(tp+fp)
 r=tp/(tp+fn)
 a=(tp+tn)/(tp+fp+fn+tn)
 p=round(p,3)
 r=round(r,3)
 a=round(a,3)
-
 precision.append(p)
 recall.append(r)
 accuracy.append(a)
@@ -44,17 +43,16 @@ clf=GaussianNB()
 clf.fit(Xtraining,ytraining)
 print("Classificatore Gaussian Naive Bayes addestrato")
 prediction=clf.predict(Xtest)
+
 print("Gaussian_Naive_Bayes Contingency Matrix")
 tn, fp, fn, tp = confusion_matrix(ytrue, prediction).ravel()
 printConfusionMatrix(tn, fp, fn, tp)
-
 p=tp/(tp+fp)
 r=tp/(tp+fn)
 a=(tp+tn)/(tp+fp+fn+tn)
 p=round(p,3)
 r=round(r,3)
 a=round(a,3)
-
 precision.append(p)
 recall.append(r)
 accuracy.append(a)

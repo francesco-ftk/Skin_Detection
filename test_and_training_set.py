@@ -13,9 +13,9 @@ def save_frame_from_video():
 
     print("Salvataggio frame da video: ")
     for video in Video:
-
         print("Inizio elaborazione video %s" % video)
         # Conta frame del video input e del video output corrispondente
+
         count=0
         cap=cv2.VideoCapture('Dataset/Video/%si.avi' % video)
         while(True):
@@ -112,6 +112,7 @@ def create_training_and_test_set(totalFrame):
                 X.append((Y,S,H))
         count+=1
     count=1
+
     y=[]
     for i in range(totalFrame):
         im=Image.open("Dataset/frame_output/frame%d.jpg" % count)
