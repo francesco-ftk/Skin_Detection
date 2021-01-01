@@ -6,7 +6,7 @@ from sklearn.model_selection import train_test_split
 
 def save_frame_from_video():
 
-    Video=['1','2']
+    Video=['1','2'] # fix with the right number of video
     ni=0
     no=0
     totalFrame=0
