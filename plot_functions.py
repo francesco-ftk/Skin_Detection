@@ -9,9 +9,8 @@ def graphic_plot(n_estimators,f_score):
     plt.show()
 
 def histogram_plot(f_score):
-    x = [1,2]
-    plt.bar(x, height=f_score)
-    plt.ylabel('F-score')
-    plt.xticks(x,["Gaussian_Naive_Bayes","Random_Forest"])
+    y = [1,2]
+    plt.barh(y,f_score)
+    plt.yticks(y,["Gaussian_Naive_Bayes","Random_Forest"])
+    plt.xlabel('F-score')
     plt.show()
-
