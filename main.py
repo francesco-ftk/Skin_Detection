@@ -22,7 +22,6 @@ print("Gaussian_Naive_Bayes_Classifier")
 clf=GaussianNB()
 clf.fit(Xtraining,ytraining)
 print("Training finished")
-f_score.append(round(clf.score(Xtest,ytrue),2))
 prediction=clf.predict(Xtest)
 # Gaussian_Naive_Bayes Contingency Matrix
 tn, fp, fn, tp = confusion_matrix(ytrue, prediction).ravel()
@@ -37,13 +36,15 @@ precision.append(p)
 recall.append(r)
 accuracy.append(a)
 classifier.append("Gaussian_Naive_Bayes")
+# F-score
+fscore=(2*(p*r)/(p+r))
+f_score.append(round(fscore,3))
 
 # Classificatore Random Forest
 print("Random_Forest_Classifier")
 clf=RandomForestClassifier(n_estimators=10, criterion='gini', max_features='auto', bootstrap=True, max_samples=None)
 clf.fit(Xtraining,ytraining)
 print("Training completed")
-f_score.append(round(clf.score(Xtest,ytrue),2))
 prediction=clf.predict(Xtest)
 #Random_Forest Contingency Matrix
 tn, fp, fn, tp = confusion_matrix(ytrue, prediction).ravel()
@@ -58,6 +59,9 @@ precision.append(p)
 recall.append(r)
 accuracy.append(a)
 classifier.append("Random_Forest")
+# F-score
+fscore=(2*(p*r)/(p+r))
+f_score.append(round(fscore,3))
 
 # Stampa risultati
 histogram_plot(f_score)
