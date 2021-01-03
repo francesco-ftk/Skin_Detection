@@ -1,8 +1,7 @@
 # Skin_Detection
 AI exam project
 
-Il progetto consiste nell'addestrare e testare i classificatori Random_Forest e Gaussian_Naive_Bayes nel riconoscimento di pelle nei video. Le implementazioni degli algoritmi sono
-state prese dalla libreria Python scikit-learn.
+Il progetto consiste nell'addestrare e testare i classificatori Random_Forest e Gaussian_Naive_Bayes nel riconoscimento di pelle nei video. Le implementazioni degli algoritmi di apprendimento sono state prese dalla libreria Python scikit-learn.
 
 Il progetto prevede 3 file Python:
 1) il file "test_and_training_set.py" che include la funzione per salvare frames da video e la funzione che elabora i pixels dei frame per creare i set di training e di test.
