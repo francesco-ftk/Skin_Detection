@@ -4,7 +4,7 @@ AI exam project
 Il progetto consiste nell'addestrare e testare i classificatori Random_Forest e Gaussian_Naive_Bayes nel riconoscimento di pelle nei video. Le implementazioni degli algoritmi di apprendimento sono state prese dalla libreria Python scikit-learn.
 
 Il progetto è formato da 3 file Python:
-1) Il file "test_and_training_set.py" che include la funzione per salvare frames da video e la funzione che elabora i pixels dei frame per creare i set di training e di test.
+1) Il file "test_and_training_set.py" che include la funzione per salvare frame da video e la funzione che elabora i pixel dei frame per creare i set di training e di test.
 2) Il file "table_plot_functions.py" che contiene le funzioni per stampare i risultati sperimentali in grafici e tabelle.
 3) Il file "main.py" che usa le funzioni citate sopra per eseguire i test e visualizzarne i risultati.
 
