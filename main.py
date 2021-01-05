@@ -10,13 +10,13 @@ accuracy=[]
 classifier=[]
 f_score=[]
 
-numeroVideo=input("Inserire il numero di video grezzi da elaborare: ")
+numeroVideo=input("Inserire il numero di coppie di video da elaborare: ")
 # Salvataggio frame da video
 totalFrame=save_frame_from_video(int(numeroVideo))
 
 # Creazione Training Set e Test Set
 Xtraining, Xtest, ytraining, ytrue= create_training_and_test_set(totalFrame)
-print("#samples: ", len(Xtraining), "#features: ", 3)
+print("#samples: ", len(Xtraining))
 
 # Classificatore Gaussian Naive Bayes
 print("Gaussian_Naive_Bayes_Classifier")
